@@ -1,37 +1,47 @@
 import React, { Component } from 'react';
-import Rock from './images/rock.png';
-import Scissors from './images/scissor.png';
+import Rock from './images/rockhand.png';
+import Paper from './images/paper.png';
+import MagicBox from './images/magicbox.png';
+import Scissors from './images/scissorhand.png';
 import Shield from './images/shield.png';
 import Sword from './images/sword.png';
 import Tank from './images/tank.png';
 import Wand from './images/wand.png';
-import MagicBox from './images/magic-box.jpeg';
-import WaterGun from './images/water-gun.png';
-import LightSaberBlue from'./images/light-saber-blue.png';
-import LightSaberGreen from './images/light-saber-green.png';
-import LightSaberRed from './images/light-saber-red.png';
+import WaterGun from './images/water gun.png';
+import LightSaberBlue from './images/lightsaber-blue.png';
+import LightSaberGreen from './images/lightsaber-green.png';
+import LightSaberRed from './images/lightsaber-red.png';
 import './App.css';
 
 export class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Rock , Paper... Magic box?</h1>
-        <div className="Images">
-        <img src={Rock} alt="rock" />
-        <img src={Scissors} alt="scissors" />
-        <img src={MagicBox} alt="magic-box" />
-        <img src={Shield} alt="shield" />
-        <img src={Sword} alt="sword" />
-        <img src={Tank} alt="tank" />
-        <img src={Wand} alt="wand" />
-        <img src={WaterGun} alt="water-gun" />
-        <img src={LightSaberBlue} alt="light-saber-blue" />
-        <img src={LightSaberGreen} alt="light-saber-green" />
-        <img src={LightSaberRed} alt="light-saber-red" />
+        <h1 class='header'>Rock , Paper... <span id='magic'>Magic box?</span></h1>
+        <div class='players'>
+          <h3>Player: <span>0</span></h3>
+          <h3>Cpu: <span>0</span></h3>
+        </div>
+        <div class="Container">
+          <div class="game-area">
+            <img src={Rock} alt="rock" />
+            <img src={Paper} alt="paper" />
+            <img src={MagicBox} alt="magicbox" />
+          </div>
+          {/* <div className="Box">
+            <img src={Scissors} alt="scissors" />
+            <img src={Shield} alt="shield" />
+            <img src={Sword} alt="sword" />
+            <img src={Tank} alt="tank" />
+            <img src={Wand} alt="wand" />
+            <img src={WaterGun} alt="water-gun" />
+            <img src={LightSaberBlue} alt="lightsaber-blue" />
+            <img src={LightSaberGreen} alt="lightsaber-green" />
+            <img src={LightSaberRed} alt="lightsaber-red" />
+        */}
+        </div >
       </div>
-      </div>
-      
+
     )
   }
 }
