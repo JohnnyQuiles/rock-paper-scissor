@@ -10,18 +10,7 @@ import LightSaberGreen from './images/lightsaber-green.png';
 import LightSaberRed from './images/lightsaber-red.png';
 
 function magicBoxHandler () { 
-    
-    const randomItem = [
-        Scissors,
-        LightSaberGreen,
-    ]
-    if(MagicBox === randomItem.Scissors) {
-    const randNums = Math.floor(Math.random() * 10 + 1);
-    this.setState({ randomItem: randNums });
-    } else if(MagicBox !== randomItem.Scissors) {
-        console.log("ERROR");
-    }
-    console.log('Random Item:', randomItem);
+
 }
 
 export function MagicBoxComp() {
