@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { MagicBoxComp } from './MagicBox';
 import Rock from './images/rockhand.png';
 import Paper from './images/paper.png';
 import MagicBox from './images/magicbox.png';
@@ -14,6 +15,26 @@ import LightSaberRed from './images/lightsaber-red.png';
 import './App.css';
 
 export class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      randomNum: 0,
+    }
+  };
+  getRandomNum = () => {
+    const randNums = Math.floor(Math.random() * 10 + 1);
+    this.setState({ randomNum: randNums });
+    console.log('randomNum: ', randNums);
+  }
+  rockHandler = () => {
+    console.log('rock clicked');
+  }
+  paperHandler = () => {
+    console.log('paper clicked');
+  }
+  magicBoxHandler = () => {
+    console.log('magic box clicked');
+  }
   render() {
     return (
       <div className="App">
@@ -24,24 +45,29 @@ export class App extends Component {
         </div>
         <div class="Container">
           <div class="game-area">
-            <img src={Rock} alt="rock" />
-            <img src={Paper} alt="paper" />
-            <img src={MagicBox} alt="magicbox" />
+            <img src={Rock} onClick={this.rockHandler} name="rock" />
+            <img src={Paper} onClick={this.paperHandler} name="paper" />
+            <MagicBoxComp onClick={this.magicBoxHandler} />
+            {/* <img src={MagicBox} onClick={this.magicBoxHandler} name="magicbox" /> */}
           </div>
-          {/* <div className="Box">
-            <img src={Scissors} alt="scissors" />
-            <img src={Shield} alt="shield" />
-            <img src={Sword} alt="sword" />
-            <img src={Tank} alt="tank" />
-            <img src={Wand} alt="wand" />
-            <img src={WaterGun} alt="water-gun" />
-            <img src={LightSaberBlue} alt="lightsaber-blue" />
-            <img src={LightSaberGreen} alt="lightsaber-green" />
-            <img src={LightSaberRed} alt="lightsaber-red" />
-        */}
-        </div >
+          {/* invis item box */}
+          {/* <div class="ItemBox">
+            <div class="item-area">
+              dont mind this
+              <img src={Scissors} name="scissors" />
+              <img src={Shield} name="shield" />
+              <img src={Sword} name="sword" />
+              <img src={Tank} name="tank" />
+              <img src={Wand} name="wand" />
+              <img src={WaterGun} name="water-gun" />
+              <img src={LightSaberBlue} name="lightsaber-blue" />
+              <img src={LightSaberGreen} name="lightsaber-green" />
+              <img src={LightSaberRed} name="lightsaber-red" />
+            </div>
+          </div> */}
+        </div>
+        <button onClick={this.getRandomNum}>random buttom</button>
       </div>
-
     )
   }
 }
